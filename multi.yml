@@ -1,0 +1,60 @@
+version: '2.2'
+
+
+services:
+  jenkins-master:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    user: root
+    environment:
+      - TZ=America/Denver
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+      - $HOME/jenkins:/var/jenkins_home
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.5
+    ports:
+      - 127.0.0.1:2345:2345
+      - 8080:8080
+      - 50000:50000
+
+  # Jenkins slave will be configured after the setup is complete for jenkins_master
+  jenkins-slave:
+    image: jenkins/inbound-agent
+    container_name: jnlp_slave
+    user: root
+    command: -url http://10.5.0.5:8080 "dad74fba44f1e53823a9dcf52ba920f9cfcdcc7ff6a9e174d60e47996bb14a6c" "slave_1"
+    restart: always
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.6
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+      - $HOME/jnlp_slave:/var/jenkins_home
+      - ./slave/ssh.py:/tmp/slave/ssh.py
+      - ./slave/init.sh:/tmp/slave/init.sh
+
+  remote-computer:
+    image: ubuntu
+    container_name: remote_computer
+    user: root
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.7
+    # command: tail -f /dev/null
+    entrypoint: sh -c "sh /tmp/remote/init.sh"
+    volumes:
+      - ./remote/init.sh:/tmp/remote/init.sh
+
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1

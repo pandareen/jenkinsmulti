@@ -42,4 +42,9 @@ Enter the password on the input `Administrator password` and click `Continue`
 - You'll be shown the setup wizard, and press "Install suggested plugins" and let the installation continue
 <img width="991" alt="Screenshot 2022-12-13 at 10 22 33 PM" src="https://user-images.githubusercontent.com/7270563/207394935-bc6b814d-36c7-4af1-896a-5d6b73b1ed1a.png">
 
-- 
+- Once the above process completes, you'll be asked to add new admin users, use 'jenkins' as username and 'jenkins' as password and all the fields as shown in the screenshot. After that press "Save and Continue"
+
+<img width="995" alt="Screenshot 2022-12-13 at 10 31 37 PM" src="https://user-images.githubusercontent.com/7270563/207397225-2a63baed-8583-4cbd-a070-50c3885f8522.png">
+
+
+

@@ -40,3 +40,6 @@ for ex: `c51c81860b424059badf009a1d06ec33`
 Enter the password on the input `Administrator password` and click `Continue`
 
 - You'll be shown the setup wizard, and press "Install suggested plugins" and let the installation continue
+<img width="991" alt="Screenshot 2022-12-13 at 10 22 33 PM" src="https://user-images.githubusercontent.com/7270563/207394935-bc6b814d-36c7-4af1-896a-5d6b73b1ed1a.png">
+
+- 

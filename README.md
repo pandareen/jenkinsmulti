@@ -46,5 +46,18 @@ Enter the password on the input `Administrator password` and click `Continue`
 
 <img width="993" alt="Screenshot 2022-12-13 at 10 33 27 PM" src="https://user-images.githubusercontent.com/7270563/207397397-13e57f44-b948-4dee-a677-4542176f3651.png">
 
+- Next is the jenkins url,
+set it to `http://10.5.0.5:8080/` and "Save and Finish"
+<img width="984" alt="Screenshot 2022-12-13 at 10 35 27 PM" src="https://user-images.githubusercontent.com/7270563/207397781-fca5a93a-0ea9-4284-89e2-527317adfeeb.png">
+
+- Jenkins is ready, click on next
+
+- Create a new jenkins slave node. Click on Manage Jenkins -> Setup Agent
+Set node name as `slave_1` and enable "Permanent Agent" press "Create"
+<img width="1328" alt="Screenshot 2022-12-13 at 10 37 22 PM" src="https://user-images.githubusercontent.com/7270563/207398154-2241e694-586f-4d70-ba9d-233d1f2a8df3.png">
+
+- In the next step, its gonna ask more details for the node, set them as follows and hit "Save"
+<img width="1785" alt="Screenshot 2022-12-13 at 10 39 25 PM" src="https://user-images.githubusercontent.com/7270563/207398522-f23b8e0f-ece4-4694-9ba1-bf8d72d2c2df.png">
+<img width="1764" alt="Screenshot 2022-12-13 at 10 39 47 PM" src="https://user-images.githubusercontent.com/7270563/207398602-7164079d-e154-4a69-bad5-29de317e6c3e.png">
 
 

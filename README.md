@@ -11,3 +11,11 @@ mkdir  ~/jenkins/  ~/jnlp_slave
 ```
 cd ~/testscripts/jenkinsmulti
 ```
+
+- Make sure the Docker desktop is installed and running (https://www.docker.com/products/docker-desktop/)
+
+- Once inside the `jenkinsmulti` folder, run the following command
+
+```
+docker-compose -f multi.yml up -d
+```

@@ -83,4 +83,40 @@ Removing jnlp_slave      ... done
 Removing network jenkinsmulti_vpcbr
 ```
 
-- 
+- Again start the docker compose with
+```
+docker-compose -f multi.yml up -d
+```
+Go to http://localhost:8080/manage/computer/ and check if the slave_1 is online 
+<img width="1430" alt="Screenshot 2022-12-13 at 10 46 43 PM" src="https://user-images.githubusercontent.com/7270563/207400076-d490530c-c0d7-4262-b06a-06f50ad378a0.png">
+
+- Now this completes the jenkins master and slave configuration in the same docker as two separate containers
+
+- Now we will create a new job that will execute a python script which lists files in remote server
+Create a new job and name it as test
+Jenkins Dashboard -> New Item -> Set name as "test" -> Select "Freestyle Project" -> Click ok
+Now configure this new job "test"
+This job has to run on a specific agent "slave_1". This job is parametrized and will have two string parameters 'ip_addr' and 'root_dir'. It should have a build steps as execute a shell command. The contents of this should be 
+```
+apt update
+apt install pip -y
+pip install paramiko
+python3 /tmp/slave/ssh.py --ip_addr=${ip_addr} --root_dir=${root_dir}
+```
+Follow the screenshots and the job config should look like this, leave rest as is
+<img width="1774" alt="Screenshot 2022-12-13 at 10 52 35 PM" src="https://user-images.githubusercontent.com/7270563/207402307-1ba7ba72-a14b-4aed-be0f-be28c99fb2db.png">
+
+<img width="1780" alt="Screenshot 2022-12-13 at 10 52 48 PM" src="https://user-images.githubusercontent.com/7270563/207402335-79fdbd6a-1bff-4f12-a64b-2e2f382355c3.png">
+
+<img width="1785" alt="Screenshot 2022-12-13 at 10 53 07 PM" src="https://user-images.githubusercontent.com/7270563/207402356-234288ac-fc87-45a1-a5f8-0f8448abeea1.png">
+
+Hit save
+
+- Now build the jenkins job with the following default parameters
+<img width="1791" alt="Screenshot 2022-12-13 at 10 53 18 PM" src="https://user-images.githubusercontent.com/7270563/207402484-7455acca-3da2-426e-ac71-10b400d56df4.png">
+
+
+- The output should look like this and the job should succeed
+
+<img width="1778" alt="Screenshot 2022-12-13 at 10 55 00 PM" src="https://user-images.githubusercontent.com/7270563/207402522-de25dcaf-3bb4-4756-b534-2f88de283431.png">
+

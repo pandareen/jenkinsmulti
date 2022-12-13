@@ -44,7 +44,7 @@ Enter the password on the input `Administrator password` and click `Continue`
 
 - Once the above process completes, you'll be asked to add new admin users, use 'jenkins' as username and 'jenkins' as password and all the fields as shown in the screenshot. After that press "Save and Continue"
 
-<img width="995" alt="Screenshot 2022-12-13 at 10 31 37 PM" src="https://user-images.githubusercontent.com/7270563/207397225-2a63baed-8583-4cbd-a070-50c3885f8522.png">
+<img width="993" alt="Screenshot 2022-12-13 at 10 33 27 PM" src="https://user-images.githubusercontent.com/7270563/207397397-13e57f44-b948-4dee-a677-4542176f3651.png">
 
 
 

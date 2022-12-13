@@ -1,4 +1,17 @@
 # jenkinsmulti
+
+jenkinsmulti
+├── LICENSE # license file
+├── master # master data folder
+├── multi.yml # the main docker compose yml file (custom name)
+├── remote
+│   └── init.sh # initialisation script for the remote machine. consists ssh server configuration and ssh users configuration
+└── slave
+    ├── init.sh # initialisation script for the slave jenkins. includes the files needed for the program for running commands remotely
+    └── ssh.py # python program that takes two inputs to run the bash commands remotely. This will be called by the jenkins job
+
+3 directories, 5 files
+
 Steps:
 
 - Create 2 directories in home: `~/jenkins/` & `~/jnlp_slave`

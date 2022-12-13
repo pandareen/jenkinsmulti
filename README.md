@@ -1,5 +1,6 @@
 # jenkinsmulti
 
+<pre>
 jenkinsmulti
 ├── LICENSE # license file
 ├── master # master data folder
@@ -11,7 +12,7 @@ jenkinsmulti
     └── ssh.py # python program that takes two inputs to run the bash commands remotely. This will be called by the jenkins job
 
 3 directories, 5 files
-
+</pre>
 Steps:
 
 - Create 2 directories in home: `~/jenkins/` & `~/jnlp_slave`

@@ -67,5 +67,20 @@ Set node name as `slave_1` and enable "Permanent Agent" press "Create"
 
 - Replace the secret in line no. 29 for example `dad74fba44f1e53823a9dcf52ba920f9cfcdcc7ff6a9e174d60e47996bb14a6c` with `460330d08e62e6f45849670dca55b31bf2485b30b1601671bfca107bf63f22b7`
 
+- After this go to terminal and the `jenkinsmulti` folder. Execute the following command
+```
+docker-compose -f multi.yml down
+```
+This will show this output 
+```
+(base) ➜  jenkinsmulti git:(main) docker-compose -f multi.yml down
+Stopping jenkins         ... done
+Stopping remote_computer ... done
+Stopping jnlp_slave      ... done
+Removing jenkins         ... done
+Removing remote_computer ... done
+Removing jnlp_slave      ... done
+Removing network jenkinsmulti_vpcbr
+```
 
-
+- 

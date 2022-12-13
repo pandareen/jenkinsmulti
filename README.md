@@ -61,3 +61,11 @@ Set node name as `slave_1` and enable "Permanent Agent" press "Create"
 <img width="1764" alt="Screenshot 2022-12-13 at 10 39 47 PM" src="https://user-images.githubusercontent.com/7270563/207398602-7164079d-e154-4a69-bad5-29de317e6c3e.png">
 
 
+- Slave Node is now created, go to http://localhost:8080/manage/computer/slave_1/ and copy the secret for ex `460330d08e62e6f45849670dca55b31bf2485b30b1601671bfca107bf63f22b7`
+<img width="1731" alt="Screenshot 2022-12-13 at 10 41 44 PM" src="https://user-images.githubusercontent.com/7270563/207398998-f123ff11-b9e4-4b69-ac60-9ba29420a395.png">
+
+
+- Replace the secret in line no. 29 for example `dad74fba44f1e53823a9dcf52ba920f9cfcdcc7ff6a9e174d60e47996bb14a6c` with `460330d08e62e6f45849670dca55b31bf2485b30b1601671bfca107bf63f22b7`
+
+
+
